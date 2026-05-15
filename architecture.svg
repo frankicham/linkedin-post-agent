@@ -1,0 +1,66 @@
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LinkedIn Post Agent architecture diagram">
+<title>LinkedIn Post Agent — three-layer architecture</title>
+<desc>Memory layer of three markdown files feeds the Claude orchestrator, which generates and reviews posts then pushes records into the Make data store. The Make scenario polls the data store every 15 minutes and queues posts in Buffer, which publishes to LinkedIn on schedule.</desc>
+
+<style>
+.tx { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.title { font-size: 14px; font-weight: 500; }
+.sub { font-size: 12px; }
+.tier-label { font-size: 12px; font-weight: 500; fill: #888780; }
+.linkedin-label { font-size: 16px; font-weight: 500; fill: #0C447C; }
+</style>
+
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10" fill="#5F5E5A"/>
+</marker>
+</defs>
+
+<text x="350" y="22" class="tx tier-label" text-anchor="middle">1 · Memory (your inputs)</text>
+
+<rect x="30" y="36" width="200" height="64" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="130" y="63" class="tx title" fill="#2C2C2A" text-anchor="middle">brand-voice.md</text>
+<text x="130" y="83" class="tx sub" fill="#444441" text-anchor="middle">your voice rules</text>
+
+<rect x="250" y="36" width="200" height="64" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="350" y="63" class="tx title" fill="#2C2C2A" text-anchor="middle">sources.md</text>
+<text x="350" y="83" class="tx sub" fill="#444441" text-anchor="middle">feeds + your YouTube</text>
+
+<rect x="470" y="36" width="200" height="64" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="570" y="63" class="tx title" fill="#2C2C2A" text-anchor="middle">ad-hoc-finds.md</text>
+<text x="570" y="83" class="tx sub" fill="#444441" text-anchor="middle">weekly hot takes</text>
+
+<path d="M 350 100 L 350 140" stroke="#5F5E5A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+<text x="350" y="155" class="tx tier-label" text-anchor="middle">2 · Claude (the brain)</text>
+
+<rect x="100" y="170" width="500" height="115" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="350" y="200" class="tx title" fill="#3C3489" text-anchor="middle">Monday 9am scheduled task</text>
+<text x="350" y="225" class="tx sub" fill="#534AB7" text-anchor="middle">researches sources → drafts 5 ideas → interactive review widget</text>
+<text x="350" y="245" class="tx sub" fill="#534AB7" text-anchor="middle">→ writes approved posts → pushes records → re-renders calendar</text>
+<text x="350" y="270" class="tx sub" fill="#534AB7" font-style="italic" text-anchor="middle">+ Sunday reminder · ad-hoc updates from chat</text>
+
+<path d="M 350 285 L 350 325" stroke="#5F5E5A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+<text x="350" y="340" class="tx tier-label" text-anchor="middle">3 · Publishing</text>
+
+<rect x="30" y="355" width="195" height="64" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="127" y="382" class="tx title" fill="#085041" text-anchor="middle">Make data store</text>
+<text x="127" y="402" class="tx sub" fill="#0F6E56" text-anchor="middle">linkedin-queue</text>
+
+<path d="M 228 387 L 252 387" stroke="#5F5E5A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+<rect x="257" y="355" width="195" height="64" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="354" y="382" class="tx title" fill="#085041" text-anchor="middle">Make scenario</text>
+<text x="354" y="402" class="tx sub" fill="#0F6E56" text-anchor="middle">polls every 15 min</text>
+
+<path d="M 455 387 L 479 387" stroke="#5F5E5A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+<rect x="484" y="355" width="195" height="64" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="581" y="382" class="tx title" fill="#085041" text-anchor="middle">Buffer</text>
+<text x="581" y="402" class="tx sub" fill="#0F6E56" text-anchor="middle">scheduled posting</text>
+
+<path d="M 350 419 L 350 448" stroke="#5F5E5A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+<text x="350" y="466" class="tx linkedin-label" text-anchor="middle">LinkedIn</text>
+</svg>
