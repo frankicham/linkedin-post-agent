@@ -4,8 +4,7 @@
 
 ![Architecture](./architecture.svg)
 
-**Watch the build:** [YouTube — How I built an AI agent that runs my LinkedIn](#) *(coming soon)*
-
+**Watch the build:**  https://youtu.be/UUp6oizwncQ
 ---
 
 ## What it does
